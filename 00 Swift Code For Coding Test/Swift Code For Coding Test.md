@@ -1,4 +1,4 @@
-# Swift Code For Coding Test
+# Swift Code for Coding Test
 
 ## 목차
 | 목차 | 
@@ -18,7 +18,7 @@
 ```swift
 let input = readLine()!
 ```
-`readLine()`에 강제언래핑을 활용하여 입력을 받는다.
+`readLine()`에 강제언래핑을 활용하여 입력을 받을 수 있다.
 실무에서 짤 때는 값이 없을 경우(nil) 런타임 에러를 야기하기때문에 지양하지만, 알고리즘 문제에서 보통 입력값은 구체적인 값이 주어지고 그에 따른 결과값을 반환하도록 요구한다.
 그러므로, 강제 언래핑을 통해 코드양을 줄이고 시간 관리를 하도록 한다.
 <br/>
@@ -61,7 +61,7 @@ let numbers = Array(readLine()!).map {Int(String($0))!}
 let str = "aBcDe"
 let count = str.count
 ```
-String에 대한 count 프로퍼티를 이용해 문자열에 있는 문자의 개수를 알 수 있다.
+String에 대한 count 프로퍼티를 통해서 문자열에 있는 문자의 개수를 알 수 있다.
 결과적으로, `count`를 출력하면, 5가 나온다.
 <br/>
 
@@ -72,7 +72,7 @@ let emptyStr = ""
 let isStrEmpty = str.isEmpty
 let isEmptyStrEmpty = emptyStr.isEmpty
 ```
-String에 대한 isEmpty 프로퍼티를 이용해 문자열이 비어있는지 여부를 알 수 있다.
+String에 대한 isEmpty 프로퍼티를 통해서 문자열이 비어있는지 여부를 알 수 있다.
 결과적으로, `isStrEmpty`를 출력하면, false가 나온다.
 또한, `isEmptyStrEmpty`를 출력하면, true가 나온다.
 count 프로퍼티를 이용해 문자열의 개수가 0개인지를 확인할 수도 있으나, count의 시간 복잡도는 O(n)이다.
@@ -246,11 +246,144 @@ let hexadecimal = String(number, radix: 16)
 10진법 기준으로 11이었던 것은 11 = 8+0+2+1 = 1x2<sup>3</sup>+0x2<sup>2</sup>+1x2<sup>1</sup>+1x2<sup>0</sup> = 1011<sub>2</sub> 으로 표현할 수 있다.
 결과적으로, `binary`를 출력하면, 1011이 나온다.
 마찬가지로, `octal`를 출력하면, 13이, `hexadecimal`를 출력하면, b가 나온다.
+<br/>
+
+**n제곱 구하기**
+```swift
+import Foundation
+let firstNumber = pow(2.0, 3.0)
+let secondNumber = pow(2, 3)
+```
+`pow()`메서드를 통해서 n제곱을 표현할 수 있다.
+결과적으로, `firstNumber`를 출력하면, 2.0<sup>3.0</sup> = 8.0이므로 8.0이 출력된다.
+그리고 `firstNumber`의 타입은 Double이다.
+또한, `secondNumber`를 출력하면, 2<sup>3</sup> = 8이므로 8이 출력된다.
+그리고 `secondNumber`의 타입은 Decimal이다.
+이 때, `import Foundation`이 필요하다.
+<br/>
+
+**제곱근 구하기**
+```swift
+import Foundation
+let firstNumber = sqrt(9.0)
+let secondNumber = sqrt(25)
+```
+`sqrt()`메서드를 통해서 제곱근을 표현할 수 있다.
+결과적으로, `firstNumber`를 출력하면, 9.0<sup>1/2</sup> = 3.0이므로 3.0이 출력된다.
+그리고 `firstNumber`의 타입은 Double이다.
+또한, `secondNumber`를 출력하면, 25<sup>1/2</sup> = 5.0이므로 5.0이 출력된다.
+그리고 `secondNumber`의 타입은 Double이다.
+이 때, `import Foundation`이 필요하다.
+<br/>
+
+**소수점 다루기**
+```swift
+import Foundation
+let firstNumber = round(-3.75)
+let secondNumber = round(-3.2)
+let thirdNumber = round(2.7)
+```
+`round()`메서드를 통해서 반올림을 할 수 있다.
+결과적으로, `firstNumber`를 출력하면, -3.75에서 반올림 해준 -4.0이 출력된다.
+그리고 `firstNumber`의 타입은 Double이다.
+또한, `secondNumber`를 출력하면, -3.2에서 반올림 해준 -3.0이 출력된다.
+그리고 `secondNumber`의 타입은 Double이다.
+마지막으로, `thirdNumber`를 출력하면, 2.7에서 반올림 해준 3.0이 출력된다.
+그리고 `thirdNumber`의 타입은 Double이다.
+이 때, `import Foundation`이 필요하다.
+
+```swift
+import Foundation
+let firstNumber = floor(-3.75)
+let secondNumber = floor(-3.2)
+let thirdNumber = floor(2.7)
+```
+`floor()`메서드를 통해서 내림을 할 수 있다.
+결과적으로, `firstNumber`를 출력하면, -3.75에서 내림 해준 -4.0이 출력된다.
+그리고 `firstNumber`의 타입은 Double이다.
+또한, `secondNumber`를 출력하면, -3.2에서 내림 해준 -4.0이 출력된다.
+그리고 `secondNumber`의 타입은 Double이다.
+마지막으로, `thirdNumber`를 출력하면, 2.7에서 내림 해준 2.0이 출력된다.
+그리고 `thirdNumber`의 타입은 Double이다.
+이 때, `import Foundation`이 필요하다.
+
+```swift
+import Foundation
+let firstNumber = ceil(-3.75)
+let secondNumber = ceil(-3.2)
+let thirdNumber = ceil(2.7)
+```
+`ceil()`메서드를 통해서 올림을 할 수 있다.
+결과적으로, `firstNumber`를 출력하면, -3.75에서 올림 해준 -3.0이 출력된다.
+그리고 `firstNumber`의 타입은 Double이다.
+또한, `secondNumber`를 출력하면, -3.2에서 올림 해준 -3.0이 출력된다.
+그리고 `secondNumber`의 타입은 Double이다.
+마지막으로, `thirdNumber`를 출력하면, 2.7에서 올림 해준 3.0이 출력된다.
+그리고 `thirdNumber`의 타입은 Double이다.
+이 때, `import Foundation`이 필요하다.
+
+```swift
+import Foundation
+let firstNumber = trunc(-3.75)
+let secondNumber = trunc(-3.2)
+let thirdNumber = trunc(2.7)
+```
+`trunc()`메서드를 통해서 버림을 할 수 있다.
+결과적으로, `firstNumber`를 출력하면, -3.75에서 버림 해준 -3.0이 출력된다.
+그리고 `firstNumber`의 타입은 Double이다.
+또한, `secondNumber`를 출력하면, -3.2에서 버림 해준 -3.0이 출력된다.
+그리고 `secondNumber`의 타입은 Double이다.
+마지막으로, `thirdNumber`를 출력하면, 2.7에서 버림 해준 2.0이 출력된다.
+그리고 `thirdNumber`의 타입은 Double이다.
+이 때, `import Foundation`이 필요하다.
+
+```swift
+import Foundation
+let digit: Double = pow(10, 4)
+let firstNumber = round(-3.75812*digit)/digit
+let secondNumber = round(-3.24687*digit)/digit
+let thirdNumber = round(2.733468*digit)/digit
+```
+`pow()`메서드와 `round()`메서드를 통해서 특정 자리에서 반올림을 할 수 있다.
+`digit`은 pow(10, 4) = 10<sup>4</sup>이므로, 소수점 4번째 자리까지 나오는 반올림을 할 수 있다.
+-3.75812*`digit`은 네 자리 수 앞으로 이동한 -37581.2이며, 여기에서 round()메서드를 사용해주면, 반올림이 되어 -37581.0이 된다. 
+여기에서, 다시 `digit`으로 나눠주면, 네 자리 수 뒤로 이동한 -3.7581이 된다.
+결과적으로, `firstNumber`를 출력하면, -3.75812의 소수점 4번째 자리까지 반올림 해준 -3.7581이 출력된다.
+그리고 `firstNumber`의 타입은 Double이다.
+또한, `secondNumber`를 출력하면, -3.24687의 소수점 4번째 자리까지 반올림 해준 -3.2469이 출력된다.
+그리고 `secondNumber`의 타입은 Double이다.
+마지막으로, `thirdNumber`를 출력하면, 2.733468의 소수점 4번째 자리까지 반올림 해준 2.7335이 출력된다.
+그리고 `thirdNumber`의 타입은 Double이다.
+이 때, `import Foundation`이 필요하다.
+특정 자리에서 내림, 올림, 버림의 경우에도 `floor()`, `ceil()`, `trunc()`메서드와 `pow()`를 사용해서 해줄 수 있다.
+<br/>
+**절댓값 구하기**
+```swift
+let firstNumber = (-3.75).magnitude
+let secondNumber = abs(-3.75)
+```
+`.magnitude`와 `abs()`를 통해서 특정 숫자의 절댓값을 구할 수 있다.
+결과적으로, `firstNumber`를 출력하면, -3.75의 절댓값인 3.75가 출력된다.
+그리고 `firstNumber`의 타입은 Double이다.
+마찬가지로, `secondNumber`를 출력하면, -3.75의 절댓값인 3.75가 출력된다.
+그리고 `secondNumber`의 타입역시 Double이다.
+<br/>
+
+**Int와 UInt**
+추후에 내용 정리할 예정
+<br/>
+
+**Double과 Decimal**
+추후에 내용 정리할 예정
 
 <br/>
 <br/>
 
 ### 배열
+**배열 채우기**
+추후에 내용 정리할 예정
+<br/>
+
 **배열의 요소 문자열로 합치기**
 ```swift
 let strs = ["Rhode", "loves", "Hodoo"]
